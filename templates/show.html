@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    {% if test %}
+
+    <table class="table table-hover table-dark">
+
+        <thead>
+
+        <tr>
+            
+
+            <th scope="col">FEATURE NAME</th>
+            <th scope="col">DRUG NAME</th>
+            <th scope="col">IC50_EFFECT_SIZE</th>
+            <th scope="col">TARGET</th>
+            <th scope="col">TARGET_PATHWAY</th>
+            
+        </tr>
+
+        </thead>
+        <tbody>
+
+        
+            {% for a in anss %}
+            <tr>
+
+                <th>{{a[0]}}</th>
+                <th>{{a[1]}}</th>
+                <th>{{a[2]}}</th>
+                <th>{{a[3]}}</th>
+                <th>{{a[4]}}</th>
+            </tr>
+        
+            {% endfor %}
+
+
+        </tbody>
+
+    </table>
+    <form action="/test" method="get">
+        <button class="btn btn-outline-success" type="submit">Go Back</button>
+    </form>
+    {% endif %}
+
+  </body>
+</html>
